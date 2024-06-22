@@ -49,7 +49,7 @@
                 <tr>
                     <td>Git</td>
                     <td>
-                        <p><a href="https://github.com/miriel" target="_blank" rel="noopener">@miriel:github.com</a>&nbsp;&nbsp;&nbsp;&nbsp; （Primary）</p>
+                        <p><a href="https://github.com/mirielnet" target="_blank" rel="noopener">@mirielnet:github.com</a>&nbsp;&nbsp;&nbsp;&nbsp; （Primary）</p>
                     </td>
                 </tr>
             </tbody>
