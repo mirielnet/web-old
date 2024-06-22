@@ -55,9 +55,6 @@
             text-align: center;
             padding: 10px 0;
             margin-top: 20px; /* コンテンツとフッターの間にマージンを追加 */
-            position: relative;
-            width: 100%;
-            top: 0;
         }
         h4 {
             animation: fadeIn 2s ease-in-out;
