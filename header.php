@@ -20,6 +20,7 @@
             justify-content: space-between;
             margin: 0;
             padding-bottom: 60px; /* フッターの高さ分の余白を追加 */
+            text-align: center; /* テキスト中央揃え */
         }
         header {
             background: #1e90ff; /* 青色に変更 */
