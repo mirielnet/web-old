@@ -13,6 +13,7 @@
             padding: 0;
             color: #333;
             text-align: center; /* テキスト中央揃え */
+            padding-bottom: 60px; /* フッターの高さ分の余白を追加 */
         }
         header {
             background: #1e90ff; /* 青色に変更 */
@@ -38,20 +39,22 @@
         nav {
             display: flex;
             flex-wrap: wrap; /* レスポンシブ対応 */
+            justify-content: center; /* 中央揃え */
         }
         nav a {
             color: white;
             text-decoration: none;
-            margin: 10px 10px;
+            margin: 10px;
+            flex-basis: 100px; /* 幅を確保 */
+            min-width: 100px; /* 最小幅を設定 */
+            text-align: center;
         }
         footer {
             background: #1e90ff; /* 青色に変更 */
             color: white;
             text-align: center;
             padding: 10px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            margin-top: 20px; /* コンテンツとフッターの間にマージンを追加 */
         }
         h4 {
             animation: fadeIn 2s ease-in-out;
@@ -73,9 +76,6 @@
         @media (max-width: 600px) {
             header {
                 flex-direction: column; /* スマホ対応 */
-            }
-            nav {
-                justify-content: center; /* スマホ対応で中央揃え */
             }
             nav a {
                 margin: 5px 0; /* スマホ対応でマージン調整 */
