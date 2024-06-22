@@ -64,10 +64,10 @@
             color: white;
             text-align: center;
             padding: 10px 0;
-            margin-top: 20px; /* コンテンツとフッターの間にマージンを追加 */
-            position: relative; /* 相対位置に変更 */
+            margin-top: auto; /* コンテンツとフッターの間に余白を追加 */
+            position: fixed; /* ページの下部に固定 */
             width: 100%;
-            clear: both; /* float解除 */
+            bottom: 0;
         }
         h4 {
             animation: fadeIn 2s ease-in-out;
