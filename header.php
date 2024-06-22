@@ -65,9 +65,10 @@
             text-align: center;
             padding: 10px 0;
             margin-top: auto; /* コンテンツとフッターの間にマージンを追加 */
-            position: relative;
+            position: fixed; /* 固定位置に変更 */
             width: 100%;
             bottom: 0;
+            z-index: 100; /* 必要に応じてz-indexを設定 */
         }
         h4 {
             animation: fadeIn 2s ease-in-out;
@@ -87,13 +88,32 @@
             to { transform: translateX(0); }
         }
         @media (max-width: 600px) {
-            header {
-                flex-direction: column; /* スマホ対応 */
-            }
-            nav a {
-                margin: 5px 0; /* スマホ対応でマージン調整 */
-            }
+        header {
+            flex-direction: column; /* スマホ対応で縦並びに */
+            padding: 10px; /* パディングを追加 */
         }
+        .logo-title {
+            margin-bottom: 10px; /* ロゴとタイトルの間の余白を追加 */
+        }
+        header img {
+            margin-bottom: 10px; /* ロゴの下の余白を追加 */
+        }
+        nav {
+            margin-top: 10px; /* ナビゲーションの上の余白を追加 */
+        }
+        nav a {
+            margin: 5px 0; /* マージン調整 */
+            flex-basis: auto; /* 幅を自動調整 */
+            min-width: auto; /* 最小幅を解除 */
+            padding: 5px 10px; /* パディングを追加 */
+        }
+        header .title {
+            text-align: center; /* タイトルを中央揃え */
+        }
+        header .title .subtitle {
+            font-size: 10px; /* サブタイトルのフォントサイズを小さく */
+        }
+    }
     </style>
 </head>
 <body>
