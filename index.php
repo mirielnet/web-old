@@ -44,14 +44,12 @@
                 </tr>
                 <tr>
                     <td>Rosekey「Misskey」</td>
-                    <td><a href="https://freelynetwork.jp/@miriel" target="_blank" rel="noopener">@miriel@freelynetwork.jp</a></td>
+                    <td><a href="https://rosekey.jp/@miriel" target="_blank" rel="noopener">@miriel@rosekey.jp</a></td>
                 </tr>
                 <tr>
                     <td>Git</td>
                     <td>
-                        <p><a href="https://code.miriel.net/miriel" target="_blank" rel="noopener">@miriel:code.miriel.net</a> （Primary Accounts）</p>
-                        <p><a href="https://code.rosekey.dev/miriel" target="_blank" rel="noopener">@miriel:code.miriel.net</a> （Rosekey Developer Accounts）</p>
-                        <p><a href="https://github.com/miriel" target="_blank" rel="noopener">@miriel:github.com</a>&nbsp;&nbsp;&nbsp;&nbsp; （only used when necessary）</p>
+                        <p><a href="https://github.com/miriel" target="_blank" rel="noopener">@miriel:github.com</a>&nbsp;&nbsp;&nbsp;&nbsp; （Primary）</p>
                     </td>
                 </tr>
             </tbody>
