@@ -6,19 +6,13 @@
     <title>Miriel.net</title>
     <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
     <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
         body {
             font-family: 'Play', sans-serif;
             background: #f0f8ff;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
             margin: 0;
+            padding: 0;
+            color: #333;
+            text-align: center; /* テキスト中央揃え */
             padding-bottom: 60px; /* フッターの高さ分の余白を追加 */
         }
         header {
@@ -29,9 +23,6 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap; /* レスポンシブ対応 */
-            position: relative;
-            width: 100%;
-            top: 0;
         }
         header img {
             height: 50px;
@@ -63,10 +54,7 @@
             color: white;
             text-align: center;
             padding: 10px 0;
-            margin-top: auto; /* コンテンツとフッターの間にマージンを追加 */
-            position: relative;
-            width: 100%;
-            bottom: 0;
+            margin-top: 20px; /* コンテンツとフッターの間にマージンを追加 */
         }
         h4 {
             animation: fadeIn 2s ease-in-out;
