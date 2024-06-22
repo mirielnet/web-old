@@ -36,6 +36,7 @@
         header img {
             height: 50px;
             border-radius: 50%;
+            transform: translate(30px);
         }
         header .title {
             display: flex;
