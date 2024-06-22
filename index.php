@@ -4,7 +4,7 @@
     <div id="about">
         <h4><strong>Mirielについて</strong></h4>
         <p>Mirielは、学生である。</p>
-        <p>主に CherryPick Fork RosekeyのLead Developer, FreelyNetwork Group の代表として活動している。</p>
+        <p>主に CherryPick Fork RosekeyのLead Developer, Miriel Systems の代表として活動している。</p>
         <p>&nbsp;</p>
         <table>
             <tbody>
