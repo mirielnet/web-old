@@ -55,6 +55,13 @@
             </tbody>
         </table>
     </div>
+    
+    <div class="link-banner">
+            <a href="https://c30.life/" target="_blank">
+                <img src="https://c30.life/_next/image?url=https%3A%2F%2Fc30.life%2Fc30-life-banner.png&w=256&q=75" alt="C30 Life">
+            </a>
+        </div>
+    </main>
 </main>
 
 <?php include 'footer.php'; ?>

@@ -87,32 +87,49 @@
             to { transform: translateX(0); }
         }
         @media (max-width: 600px) {
-        header {
-            flex-direction: column; /* スマホ対応で縦並びに */
-            padding: 10px; /* パディングを追加 */
+            header {
+                flex-direction: column; /* スマホ対応で縦並びに */
+                padding: 10px; /* パディングを追加 */
+            }
+            .logo-title {
+                margin-bottom: 10px; /* ロゴとタイトルの間の余白を追加 */
+            }
+            header img {
+                margin-bottom: 10px; /* ロゴの下の余白を追加 */
+            }
+            nav {
+                margin-top: 10px; /* ナビゲーションの上の余白を追加 */
+            }
+            nav a {
+                margin: 5px 0; /* マージン調整 */
+                flex-basis: auto; /* 幅を自動調整 */
+                min-width: auto; /* 最小幅を解除 */
+                padding: 5px 10px; /* パディングを追加 */
+            }
+            header .title {
+                text-align: center; /* タイトルを中央揃え */
+            }
+            header .title .subtitle {
+                font-size: 10px; /* サブタイトルのフォントサイズを小さく */
+            }
         }
-        .logo-title {
-            margin-bottom: 10px; /* ロゴとタイトルの間の余白を追加 */
+        .link-banner {
+            margin: 20px 0;
+            animation: fadeInLink 3s ease-in-out;
         }
-        header img {
-            margin-bottom: 10px; /* ロゴの下の余白を追加 */
+        .link-banner img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
         }
-        nav {
-            margin-top: 10px; /* ナビゲーションの上の余白を追加 */
+        .link-banner img:hover {
+            transform: scale(1.05);
         }
-        nav a {
-            margin: 5px 0; /* マージン調整 */
-            flex-basis: auto; /* 幅を自動調整 */
-            min-width: auto; /* 最小幅を解除 */
-            padding: 5px 10px; /* パディングを追加 */
+        @keyframes fadeInLink {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
-        header .title {
-            text-align: center; /* タイトルを中央揃え */
-        }
-        header .title .subtitle {
-            font-size: 10px; /* サブタイトルのフォントサイズを小さく */
-        }
-    }
     </style>
 </head>
 <body>
