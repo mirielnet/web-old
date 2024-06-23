@@ -89,10 +89,14 @@
         @media (max-width: 600px) {
             header {
                 flex-direction: column; /* スマホ対応で縦並びに */
-                padding: 10px; /* パディングを追加 */
+                align-items: center; /* 中央揃え */
+                padding: 10px 0; /* パディングを調整 */
             }
             .logo-title {
                 margin-bottom: 10px; /* ロゴとタイトルの間の余白を追加 */
+                display: flex;
+                flex-direction: column;
+                align-items: center; /* 中央揃え */
             }
             header img {
                 margin-bottom: 10px; /* ロゴの下の余白を追加 */
