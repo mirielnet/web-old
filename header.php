@@ -8,7 +8,7 @@
     <meta name="description" content="Miriel.net - みりえるどっとねっとは、学生であるMirielの個人サイトです。主に CherryPick Fork RosekeyのLead Developer, Miriel Systems の代表として活動しています。">
     <meta name="keywords" content="Miriel, CherryPick Fork, Rosekey, Miriel Systems, プログラミング, ガジェット">
     <meta name="author" content="Miriel">
-    <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
+    <link href="./Play-Bold.ttf" rel="stylesheet">
     <style>
         /* 圧縮後のCSS */
         html, body { height: 100%; margin: 0; padding: 0; font-family: 'Play', sans-serif; background: #f0f8ff; color: #333; display: flex; flex-direction: column; justify-content: space-between; text-align: center; }
