@@ -10,134 +10,31 @@
     <meta name="author" content="Miriel">
     <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
     <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            font-family: 'Play', sans-serif;
-            background: #f0f8ff;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            margin: 0;
-            padding-bottom: 60px; /* フッターの高さ分の余白を追加 */
-            text-align: center; /* テキスト中央揃え */
-        }
-        header {
-            background: #1e90ff; /* 青色に変更 */
-            color: white;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap; /* レスポンシブ対応 */
-            position: relative;
-            width: 100%;
-            top: 0;
-        }
-        header img {
-            height: 50px;
-            border-radius: 50%;
-        }
-        header .title {
-            display: flex;
-            flex-direction: column;
-            align-items: center; /* 中央揃え */
-        }
-        header .title .subtitle {
-            font-size: 12px;
-        }
-        nav {
-            display: flex;
-            flex-wrap: wrap; /* レスポンシブ対応 */
-            justify-content: center; /* 中央揃え */
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 10px;
-            flex-basis: 100px; /* 幅を確保 */
-            min-width: 100px; /* 最小幅を設定 */
-            text-align: center;
-        }
-        footer {
-            background: #1e90ff; /* 青色に変更 */
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            margin-top: auto; /* コンテンツとフッターの間に余白を追加 */
-            position: fixed; /* ページの下部に固定 */
-            width: 100%;
-            bottom: 0;
-        }
-        h4 {
-            animation: fadeIn 2s ease-in-out;
-        }
-        table {
-            animation: slideIn 2s ease-in-out;
-            margin: auto; /* テーブル中央揃え */
-            width: 90%; /* テーブル幅調整 */
-            max-width: 800px; /* テーブル最大幅設定 */
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes slideIn {
-            from { transform: translateX(-100%); }
-            to { transform: translateX(0); }
-        }
+        /* 圧縮後のCSS */
+        html, body { height: 100%; margin: 0; padding: 0; font-family: 'Play', sans-serif; background: #f0f8ff; color: #333; display: flex; flex-direction: column; justify-content: space-between; text-align: center; }
+        header { background: #1e90ff; color: white; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; width: 100%; top: 0; }
+        header img { height: 50px; border-radius: 50%; }
+        header .title { display: flex; flex-direction: column; align-items: center; }
+        nav { display: flex; flex-wrap: wrap; justify-content: center; }
+        nav a { color: white; text-decoration: none; margin: 10px; flex-basis: 100px; min-width: 100px; text-align: center; }
+        footer { background: #1e90ff; color: white; text-align: center; padding: 10px 0; position: fixed; width: 100%; bottom: 0; }
+        h4 { animation: fadeIn 2s ease-in-out; }
+        table { animation: slideIn 2s ease-in-out; margin: auto; width: 90%; max-width: 800px; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideIn { from { transform: translateX(-100%); } to { transform: translateX(0); } }
         @media (max-width: 600px) {
-            header {
-                flex-direction: column; /* スマホ対応で縦並びに */
-                align-items: center; /* 中央揃え */
-                padding: 10px 0; /* パディングを調整 */
-            }
-            .logo-title {
-                margin-bottom: 10px; /* ロゴとタイトルの間の余白を追加 */
-                display: flex;
-                flex-direction: column;
-                align-items: center; /* 中央揃え */
-            }
-            header img {
-                margin-bottom: 10px; /* ロゴの下の余白を追加 */
-            }
-            nav {
-                margin-top: 10px; /* ナビゲーションの上の余白を追加 */
-            }
-            nav a {
-                margin: 5px 0; /* マージン調整 */
-                flex-basis: auto; /* 幅を自動調整 */
-                min-width: auto; /* 最小幅を解除 */
-                padding: 5px 10px; /* パディングを追加 */
-            }
-            header .title {
-                text-align: center; /* タイトルを中央揃え */
-            }
-            header .title .subtitle {
-                font-size: 10px; /* サブタイトルのフォントサイズを小さく */
-            }
+            header { flex-direction: column; align-items: center; padding: 10px 0; }
+            .logo-title { margin-bottom: 10px; display: flex; flex-direction: column; align-items: center; }
+            header img { margin-bottom: 10px; }
+            nav { margin-top: 10px; }
+            nav a { margin: 5px 0; padding: 5px 10px; }
+            header .title { text-align: center; }
+            header .title .subtitle { font-size: 10px; }
         }
-        .link-banner {
-            margin: 20px 0;
-            animation: fadeInLink 3s ease-in-out;
-        }
-        .link-banner img {
-            width: 100%;
-            max-width: 300px;
-            border-radius: 10px;
-            transition: transform 0.3s ease-in-out;
-        }
-        .link-banner img:hover {
-            transform: scale(1.05);
-        }
-        @keyframes fadeInLink {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+        .link-banner { margin: 20px 0; animation: fadeInLink 3s ease-in-out; }
+        .link-banner img { width: 100%; max-width: 300px; border-radius: 10px; transition: transform 0.3s ease-in-out; }
+        .link-banner img:hover { transform: scale(1.05); }
+        @keyframes fadeInLink { from { opacity: 0; } to { opacity: 1; } }
     </style>
 </head>
 <body>
