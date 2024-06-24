@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Miriel.net</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta name="description" content="Miriel.net - みりえるどっとねっとは、学生であるMirielの個人サイトです。主に CherryPick Fork RosekeyのLead Developer, Miriel Systems の代表として活動しています。">
+    <meta name="keywords" content="Miriel, CherryPick Fork, Rosekey, Miriel Systems, プログラミング, ガジェット">
+    <meta name="author" content="Miriel">
     <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
     <style>
         html, body {
