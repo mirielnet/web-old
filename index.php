@@ -43,8 +43,8 @@
                     <th>リンク</th>
                 </tr>
                 <tr>
-                    <td>Rosekey「Misskey」</td>
-                    <td><a href="https://rosekey.jp/@miriel" target="_blank" rel="noopener">@miriel@rosekey.jp</a></td>
+                    <td>Mastodon</td>
+                    <td><a href="https://post.miriel.dev/@miriel" target="_blank" rel="noopener">@miriel@post.miriel.dev</a></td>
                 </tr>
                 <tr>
                     <td>Git</td>
