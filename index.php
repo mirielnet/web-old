@@ -1,73 +1,52 @@
-<?php include 'header.php'; ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miriel - Coming Soon</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body, .headline {
+            font-family: 'Play', sans-serif;
+        }
 
-<main>
-    <div id="about">
-        <h4><strong>Mirielについて</strong></h4>
-        <p>Mirielは、学生である。</p>
-        <p>主に CherryPick Fork RosekeyのLead Developer, Miriel Systems の代表として活動している。</p>
-        <p>&nbsp;</p>
-        <table>
-            <tbody>
-                <tr>
-                    <th>項目</th>
-                    <th>内容</th>
-                </tr>
-                <tr>
-                    <td>年齢</td>
-                    <td>非公表（18↓）</td>
-                </tr>
-                <tr>
-                    <td>出身地</td>
-                    <td>岐阜県</td>
-                </tr>
-                <tr>
-                    <td>経歴</td>
-                    <td>
-                        <p><span class="EKtkFWMYpwzMKOYr0GYm LQVY1Jpkk8nyJ6HBWKAk">2024/04&rarr;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rosekey Lead Developer</span></p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>趣味</td>
-                    <td>プログラミングとガジェット</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+        .headline {
+            font-size: 2rem;
+            text-align: center;
+            margin-top: 20%;
+        }
 
-    <div id="accounts">
-        <h4><strong>Accounts</strong></h4>
-        <table>
-            <tbody>
-                <tr>
-                    <th>アカウント</th>
-                    <th>リンク</th>
-                </tr>
-                <tr>
-                    <td>Mastodon</td>
-                    <td><a href="https://post.miriel.dev/@miriel" target="_blank" rel="noopener">@miriel@post.miriel.dev</a></td>
-                </tr>
-                <tr>
-                    <td>Git</td>
-                    <td>
-                        <p><a href="https://github.com/mirielnet" target="_blank" rel="noopener">@mirielnet:github.com</a>&nbsp;&nbsp;&nbsp;&nbsp; （Primary）</p>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+        .text-swap {
+            display: inline-block;
+            animation: fadeSwap 3s infinite;
+        }
 
-     <div class="link-banner">
-            <a href="https://c30.life/" target="_blank">
-                <img src="https://c30.life/_next/image?url=https%3A%2F%2Fc30.life%2Fc30-life-banner.png&w=256&q=75" alt="C30 Life">
-            </a>
+        @keyframes fadeSwap {
+            0%, 100% { opacity: 1; }
+            45%, 55% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="headline">
+            <div class="text-swap" id="text1">Miriel - @mirielnet</div>
+            <div class="text-swap" id="text2" style="display: none;">Coming Soon...</div>
         </div>
-
-        <div class="link-banner">
-            <a href="https://inagi-saki.work/" target="_blank">
-                <img src="https://inagi-saki.work/banner.png" alt="Inagi Saki">
-            </a>
-        </div>
-    </main>
-</main>
-
-<?php include 'footer.php'; ?>
+    </div>
+    <script>
+        const text1 = document.getElementById('text1');
+        const text2 = document.getElementById('text2');
+        setInterval(() => {
+            if (text1.style.display === 'none') {
+                text1.style.display = 'inline-block';
+                text2.style.display = 'none';
+            } else {
+                text1.style.display = 'none';
+                text2.style.display = 'inline-block';
+            }
+        }, 3000);
+    </script>
+</body>
+</html>
