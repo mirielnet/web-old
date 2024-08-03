@@ -10,27 +10,29 @@
         body, html {
             height: 100%;
             margin: 0;
-            background-color: black;
-            color: white;
             font-family: 'Play', sans-serif;
-            overflow: hidden;
+            color: white;
+            background-color: black;
+            text-align: center;
         }
         .section {
-            display: none;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100%;
-            text-align: center;
-            flex-direction: column;
+            opacity: 0;
+            transition: opacity 1s, transform 1s;
         }
-        .active {
-            display: flex;
+        .section.active {
+            opacity: 1;
+            transform: translateY(0);
         }
-        h1, h2, h3 {
-            margin: 0.5em 0;
+        .section:not(.active) {
+            transform: translateY(100px);
         }
-        .scroll-down {
-            font-size: 2rem;
+        .arrow {
+            margin-top: 20px;
             animation: bounce 2s infinite;
         }
         @keyframes bounce {
@@ -38,96 +40,84 @@
                 transform: translateY(0);
             }
             40% {
-                transform: translateY(-30px);
+                transform: translateY(-10px);
             }
             60% {
-                transform: translateY(-15px);
+                transform: translateY(-5px);
             }
         }
-        .content {
-            padding: 2rem;
-        }
         footer {
-            padding: 1rem;
-            background-color: #111;
-            text-align: center;
-            position: absolute;
+            position: fixed;
             bottom: 0;
             width: 100%;
+            padding: 10px;
+            text-align: center;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
-
-    <div class="section active">
+    <div id="home" class="section active">
         <h1>みりえるどっとねっと</h1>
-        <h2>Ｍｉｒｉｅｌのサイトへようこそ。</h2>
+        <p>Mirielのサイトへようこそ。</p>
         <p>下にスクロールしてください</p>
-        <div class="scroll-down">↓</div>
+        <div class="arrow">↓</div>
     </div>
-
-    <div class="section" id="about-me">
-        <h2>About Me</h2>
-        <div class="content">
-            <p>Miriel は 2014年 からTwitter(現 X) で活動を開始した人である。主に プログラム関連などでやっている。今現在は RosekeyというSNS の Developerもしている。</p>
-            <p>今は Twitter(現 X) / Rosekey (ActivityPub) / TikTok / Instagram などで活動をしている。</p>
-            <h3>実績</h3>
-            <ul>
-                <li>2020/08 ~ 2021/02 37ch Developers Member</li>
-                <li>2021/03 ~ 2023/04 Mirial.jp Read Developer</li>
-                <li>2023/09 ~ 2023/10 Sharkey Contributor</li>
-                <li>2024/01 ~  Rosekey Read Developer</li>
-                <li>2024/06 ~  CherryPick Contributor</li>
-            </ul>
-        </div>
+    <div id="about" class="section">
+        <h1>About Me</h1>
+        <p>Miriel は 2014年 からTwitter(現 X) で活動を開始した人である。<br>
+           主に プログラム関連などでやっている。今現在は RosekeyというSNS の Developerもしている。<br>
+           今は Twitter(現 X) / Rosekey (ActivityPub) / TikTok / Instagram などで活動をしている。</p>
+        <h3>実績</h3>
+        <p>
+            2020/08 ~ 2021/02 37ch Developers Member<br>
+            2021/03 ~ 2023/04 Mirial.jp Read Developer<br>
+            2023/09 ~ 2023/10 Sharkey Contributor<br>
+            2024/01 ~  Rosekey Read Developer<br>
+            2024/06 ~  CherryPick Contributor
+        </p>
     </div>
-
-    <div class="section" id="accounts">
-        <h2>Accounts</h2>
-        <div class="content">
-            <p>X (旧 Twitter): <a href="https://x.com/mirielnet" target="_blank" style="color: white;">@mirielnet</a></p>
-            <p>Rosekey (ActivityPub): <a href="https://p0.waka.style/@miriel" target="_blank" style="color: white;">@miriel@p0.waka.style</a></p>
-            <p>GitHub (Git): <a href="https://github.com/mirielnet" target="_blank" style="color: white;">@mirielnet</a></p>
-            <p>TikTok: <a href="https://tiktok.com/@mirielnet" target="_blank" style="color: white;">@mirielnet</a></p>
-            <p>Instagram: <a href="https://instagram.com/mirielnet" target="_blank" style="color: white;">@mirielnet</a></p>
-            <p>E-Mail: <a href="mailto:contact@waka.style" style="color: white;">contact@waka.style</a> or <a href="mailto:me@miriel.net" style="color: white;">me@miriel.net</a></p>
-        </div>
+    <div id="accounts" class="section">
+        <h1>Accounts</h1>
+        <p>
+            X (旧 Twitter): @mirielnet (<a href="https://x.com/mirielnet" target="_blank" rel="noopener noreferrer">https://x.com/mirielnet</a>)<br>
+            Rosekey (ActivityPub): @miriel@p0.waka.style (<a href="https://p0.waka.style/@miriel" target="_blank" rel="noopener noreferrer">https://p0.waka.style/@miriel</a>)<br>
+            GitHub (Git): @mirielnet (<a href="https://github.com/mirielnet" target="_blank" rel="noopener noreferrer">https://github.com/mirielnet</a>)<br>
+            TikTok: @mirielnet (<a href="https://tiktok.com/@mirielnet" target="_blank" rel="noopener noreferrer">https://tiktok.com/@mirielnet</a>)<br>
+            Instagram: @mirielnet (<a href="https://instagram.com/mirielnet" target="_blank" rel="noopener noreferrer">https://instagram.com/mirielnet</a>)<br>
+            E-Mail: contact@waka.style or me@miriel.net
+        </p>
     </div>
-
     <footer>
         Copyright © 2014-2024 Miriel(@mirielnet) All Rights Reserved.
     </footer>
-
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-        let scroll = 0;
-        const sections = $('.section');
-        let currentSection = 0;
+        $(document).ready(function() {
+            var sections = $('.section');
+            var currentIndex = 0;
 
-        // 初期セクションを表示
-        $(sections[currentSection]).addClass('active');
+            $(window).on('wheel', function(event) {
+                if(event.originalEvent.deltaY > 0) {
+                    // Down scroll
+                    if (currentIndex < sections.length - 1) {
+                        currentIndex++;
+                        updateSections();
+                    }
+                } else {
+                    // Up scroll
+                    if (currentIndex > 0) {
+                        currentIndex--;
+                        updateSections();
+                    }
+                }
+            });
 
-        $(window).on('scroll', function() {
-            let newScroll = $(this).scrollTop();
-
-            if (newScroll > scroll && currentSection < sections.length - 1) {
-                // 下スクロールの時、次のセクションに移動
-                $(sections[currentSection]).removeClass('active');
-                currentSection++;
-                $(sections[currentSection]).addClass('active');
-            } else if (newScroll < scroll && currentSection > 0) {
-                // 上スクロールの時、前のセクションに移動
-                $(sections[currentSection]).removeClass('active');
-                currentSection--;
-                $(sections[currentSection]).addClass('active');
+            function updateSections() {
+                sections.removeClass('active');
+                sections.eq(currentIndex).addClass('active');
             }
-
-            // 現在のスクロール位置を更新
-            scroll = newScroll;
-
-            // スクロールを停止させる
-            $(window).scrollTop(scroll);
         });
     </script>
 </body>
