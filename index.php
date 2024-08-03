@@ -95,46 +95,43 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
         $(document).ready(function() {
-            var lastScrollTop = 0;
-            var currentSectionIndex = 0;
-            var sections = $('.section');
-    
-        function showSection(index) {
-            sections.removeClass('active').hide();
-            sections.eq(index).addClass('active').fadeIn();
-        }
-    
-        // 最初のセクションを表示
-        showSection(currentSectionIndex);
-    
-        $(window).on('scroll', function() {
-            var st = $(this).scrollTop();
-            console.log("Current scroll position:", st); // 現在のスクロール位置を表示
-    
-            // 下スクロール
-            if (st > lastScrollTop) {
-                console.log("Scrolling down"); // 下にスクロールしていることを確認
-                if (currentSectionIndex < sections.length - 1) {
-                    currentSectionIndex++;
-                    console.log("Showing section:", currentSectionIndex); // 次のセクションのインデックスを表示
-                    showSection(currentSectionIndex);
-                }
-            } 
-            // 上スクロール
-            else if (st < lastScrollTop) {
-                console.log("Scrolling up"); // 上にスクロールしていることを確認
-                if (currentSectionIndex > 0) {
-                    currentSectionIndex--;
-                    console.log("Showing section:", currentSectionIndex); // 前のセクションのインデックスを表示
-                    showSection(currentSectionIndex);
-                }
+    console.log("Document is ready"); // ドキュメントの読み込み確認
+
+    var lastScrollTop = 0;
+    var currentSectionIndex = 0;
+    var sections = $('.section');
+
+    function showSection(index) {
+        console.log("Showing section index:", index); // セクション表示確認
+        sections.removeClass('active').hide();
+        sections.eq(index).addClass('active').fadeIn();
+    }
+
+    // 最初のセクションを表示
+    showSection(currentSectionIndex);
+
+    $(window).on('scroll', function() {
+        console.log("Scroll event detected"); // スクロールイベント確認
+        var st = $(this).scrollTop();
+        console.log("Current scroll position:", st); // 現在のスクロール位置確認
+
+        if (st > lastScrollTop) {
+            console.log("Scrolling down"); // 下スクロール確認
+            if (currentSectionIndex < sections.length - 1) {
+                currentSectionIndex++;
+                showSection(currentSectionIndex);
             }
-            lastScrollTop = st;
-    
-            // スクロールをリセットすることで、ユーザーのスクロール操作を無効化
-            $(window).scrollTop(0);
-        });
+        } else if (st < lastScrollTop) {
+            console.log("Scrolling up"); // 上スクロール確認
+            if (currentSectionIndex > 0) {
+                currentSectionIndex--;
+                showSection(currentSectionIndex);
+            }
+        }
+        lastScrollTop = st;
+        $(window).scrollTop(0);
     });
+});
     </script>
 </body>
 </html>
