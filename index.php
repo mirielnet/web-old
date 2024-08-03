@@ -117,6 +117,7 @@
             var currentIndex = 0;
             var sections = ['#intro', '#about-me', '#accounts'];
             var totalSections = sections.length;
+            var startY, endY;
 
             function showSection(index) {
                 $(sections[currentIndex]).fadeOut(500, function() {
@@ -133,6 +134,29 @@
                         showSection(currentIndex + 1);
                     }
                 } else {
+                    // Up scroll
+                    if (currentIndex > 0) {
+                        showSection(currentIndex - 1);
+                    }
+                }
+            });
+
+            // タッチイベントを追加
+            $(window).on('touchstart', function(e) {
+                startY = e.originalEvent.touches[0].pageY;
+            });
+
+            $(window).on('touchmove', function(e) {
+                endY = e.originalEvent.touches[0].pageY;
+            });
+
+            $(window).on('touchend', function() {
+                if (startY > endY + 5) {
+                    // Down scroll
+                    if (currentIndex < totalSections - 1) {
+                        showSection(currentIndex + 1);
+                    }
+                } else if (startY < endY - 5) {
                     // Up scroll
                     if (currentIndex > 0) {
                         showSection(currentIndex - 1);
