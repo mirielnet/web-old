@@ -102,18 +102,18 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         $(document).ready(function() {
-            let scroll = 0;
+            var scroll = 0;
             const sections = $('.section');
             const fadeTime = 500; // フェードイン/フェードアウトの時間（ミリ秒）
             let currentSectionIndex = 0;
 
             function showSection(index) {
-                sections.removeClass('active'); // 全てのセクションを非表示
-                sections.eq(index).fadeIn(fadeTime).addClass('active'); // 指定されたセクションをフェードイン
+                sections.fadeOut(fadeTime); // 全てのセクションをフェードアウト
+                sections.eq(index).fadeIn(fadeTime); // 指定されたセクションをフェードイン
             }
 
             $(window).on('scroll', function() {
-                let newScroll = $(this).scrollTop();
+                var newScroll = $(this).scrollTop();
                 if (newScroll < scroll) {
                     // 上スクロールの時の処理
                     if (currentSectionIndex > 0) {
