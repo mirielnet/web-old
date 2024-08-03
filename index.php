@@ -12,6 +12,7 @@
             padding: 0;
             width: 100%;
             height: 100%;
+            overflow: hidden;
             background-color: black;
             color: white;
             font-family: 'Play', sans-serif;
@@ -19,11 +20,19 @@
 
         section {
             height: 100vh;
+            width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
+
+        #intro { z-index: 3; }
+        #about-me { z-index: 2; }
+        #accounts { z-index: 1; }
 
         h1, h2 {
             margin: 0;
@@ -107,29 +116,29 @@
             var sections = ['#intro', '#about-me', '#accounts'];
             var totalSections = sections.length;
 
+            function showSection(index) {
+                $(sections[currentIndex]).fadeOut(500, function() {
+                    $(sections[index]).fadeIn(500);
+                    currentIndex = index;
+                    console.log("Showing section index: " + currentIndex);
+                });
+            }
+
             $(window).on('wheel', function(e) {
                 if (e.originalEvent.deltaY > 0) {
                     // Down scroll
                     if (currentIndex < totalSections - 1) {
-                        $(sections[currentIndex]).fadeOut(500, function() {
-                            currentIndex++;
-                            $(sections[currentIndex]).fadeIn(500);
-                            console.log("Showing section index: " + currentIndex);
-                        });
+                        showSection(currentIndex + 1);
                     }
                 } else {
                     // Up scroll
                     if (currentIndex > 0) {
-                        $(sections[currentIndex]).fadeOut(500, function() {
-                            currentIndex--;
-                            $(sections[currentIndex]).fadeIn(500);
-                            console.log("Showing section index: " + currentIndex);
-                        });
+                        showSection(currentIndex - 1);
                     }
                 }
             });
 
-            // Initial visibility setup
+            // 初期表示設定
             $(sections[currentIndex]).show();
         });
     </script>
