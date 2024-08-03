@@ -17,18 +17,11 @@
             overflow-x: hidden;
         }
         .section {
-            display: flex;
+            display: none;
             align-items: center;
             justify-content: center;
             min-height: 100vh;
             flex-direction: column;
-            opacity: 0;
-            transform: translateX(-100%);
-            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-        }
-        .section.active {
-            opacity: 1;
-            transform: translateX(0);
         }
         h1, h2, h3 {
             margin: 0.5em 0;
@@ -105,20 +98,36 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         $(document).ready(function() {
-            $(window).on('scroll', function() {
-                $('.section').each(function() {
-                    var scrollTop = $(window).scrollTop();
-                    var elementOffset = $(this).offset().top;
-                    var distance = elementOffset - scrollTop;
-                    var windowHeight = $(window).height();
+            let timer;
+            let currentSectionIndex = 0;
+            const sections = $('.section');
+            const fadeTime = 500; // フェードイン/フェードアウトの時間（ミリ秒）
 
-                    // セクションの上端がウィンドウの底部から一定の距離以内に来た場合に表示
-                    if (distance < windowHeight - 100) {
-                        $(this).addClass('active');
-                    } else {
-                        $(this).removeClass('active');
+            function showSection(index) {
+                sections.fadeOut(fadeTime);
+                sections.eq(index).fadeIn(fadeTime);
+            }
+
+            showSection(currentSectionIndex); // 最初のセクションを表示
+
+            $(window).on('scroll', function() {
+                clearTimeout(timer);
+                timer = setTimeout(function() {
+                    const windowTop = $(window).scrollTop();
+                    let nextSectionIndex = currentSectionIndex;
+
+                    sections.each(function(i) {
+                        const sectionTop = $(this).offset().top - $(window).height() / 2;
+                        if (windowTop >= sectionTop) {
+                            nextSectionIndex = i;
+                        }
+                    });
+
+                    if (nextSectionIndex !== currentSectionIndex) {
+                        currentSectionIndex = nextSectionIndex;
+                        showSection(currentSectionIndex);
                     }
-                });
+                }, 150); // スクロール停止後に150ms待機してからセクションを変更
             });
         });
     </script>
