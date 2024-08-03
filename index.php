@@ -78,7 +78,9 @@
     <section id="about-me" style="display: none;">
         <div>
             <h1>About Me</h1>
-            <p>Miriel は 2014年 からTwitter(現 X) で活動を開始した人である。主にプログラム関連などでやっている。今現在は RosekeyというSNS の Developerもしている。今は Twitter(現 X) / Rosekey (ActivityPub) / TikTok / Instagram などで活動をしている。</p>
+            <p>Miriel は 2014年 からTwitter(現 X) で活動を開始した人である。主にプログラム関連などでやっている。</p>
+            <p>現在は RosekeyというSNS の Developerもしている。
+            <p>今は Twitter(現 X) / Rosekey (ActivityPub) / TikTok / Instagram などで活動をしている。</p>
             <h3>実績</h3>
             <p>
                 2020/08 ~ 2021/02 37ch Developers Member<br>
@@ -93,12 +95,12 @@
     <section id="accounts" style="display: none;">
         <div>
             <h1>Accounts</h1>
-            <p>X (旧 Twitter): @mirielnet (https://x.com/mirielnet)<br>
-            Rosekey (ActivityPub): @miriel@p0.waka.style (https://p0.waka.style/@miriel)<br>
-            GitHub (Git): @mirielnet (https://github.com/mirielnet)<br>
-            TikTok: @mirielnet (https://tiktok.com/@mirielnet)<br>
-            Instagram: @mirielnet (https://instagram.com/mirielnet)<br>
-            E-Mail: contact@waka.style or me@miriel.net
+            <p>X (旧 Twitter): <a href="https://x.com/mirielnet" target="_blank" rel="noopener">@mirielnet</a>
+            <br />Rosekey (ActivityPub): <a href="https://p0.waka.style/@miriel">@miriel@p0.waka.style</a>
+            <br />GitHub (Git): <a href="https://github.com/mirielnet" target="_blank" rel="noopener">@mirielnet</a>
+            <br />TikTok: <a href="https://tiktok.com/@mirielnet" target="_blank" rel="noopener">@mirielnet</a>
+            <br />Instagram: <a href="https://instagram.com/mirielnet">@mirielnet</a>
+            <br />E-Mail: <a href="mailto:contact@waka.style">contact@waka.style</a> or <a href="mailto:me@miriel.net">me@miriel.net</a>
             </p>
         </div>
     </section>
