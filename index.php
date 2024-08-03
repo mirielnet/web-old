@@ -13,7 +13,6 @@
             background-color: black;
             color: white;
             font-family: 'Play', sans-serif;
-            text-align: center;
             overflow-x: hidden;
         }
         .section {
@@ -22,6 +21,7 @@
             justify-content: center;
             min-height: 100vh;
             flex-direction: column;
+            text-align: center;
         }
         h1, h2, h3 {
             margin: 0.5em 0;
@@ -47,9 +47,7 @@
         footer {
             padding: 1rem;
             background-color: #111;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            text-align: center;
         }
     </style>
 </head>
@@ -104,8 +102,8 @@
             const fadeTime = 500; // フェードイン/フェードアウトの時間（ミリ秒）
 
             function showSection(index) {
-                sections.fadeOut(fadeTime);
-                sections.eq(index).fadeIn(fadeTime);
+                sections.hide(); // 全てのセクションを非表示
+                sections.eq(index).fadeIn(fadeTime); // 指定されたセクションをフェードイン
             }
 
             showSection(currentSectionIndex); // 最初のセクションを表示
