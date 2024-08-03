@@ -95,30 +95,39 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
         $(document).ready(function() {
+            var currentSectionIndex = 0;
             var sections = $('.section');
-            var currentIndex = 0;
-
-            $(window).on('wheel', function(event) {
-                if(event.originalEvent.deltaY > 0) {
-                    // Down scroll
-                    if (currentIndex < sections.length - 1) {
-                        currentIndex++;
-                        updateSections();
+        
+            function showSection(index) {
+                sections.removeClass('active').hide();
+                sections.eq(index).addClass('active').show();
+            }
+        
+            // 最初のセクションを表示
+            showSection(currentSectionIndex);
+        
+            var lastScrollTop = 0;
+            $(window).on('scroll', function() {
+                var st = $(this).scrollTop();
+        
+                if (st > lastScrollTop) {
+                    // 下にスクロール
+                    if (currentSectionIndex < sections.length - 1) {
+                        currentSectionIndex++;
+                        showSection(currentSectionIndex);
+                        $('html, body').stop().animate({ scrollTop: 0 }, 'fast'); // スクロールをリセット
                     }
                 } else {
-                    // Up scroll
-                    if (currentIndex > 0) {
-                        currentIndex--;
-                        updateSections();
+                    // 上にスクロール
+                    if (currentSectionIndex > 0) {
+                        currentSectionIndex--;
+                        showSection(currentSectionIndex);
+                        $('html, body').stop().animate({ scrollTop: 0 }, 'fast'); // スクロールをリセット
                     }
                 }
+                lastScrollTop = st;
             });
-
-            function updateSections() {
-                sections.removeClass('active');
-                sections.eq(currentIndex).addClass('active');
-            }
-        });
+        });         
     </script>
 </body>
 </html>
