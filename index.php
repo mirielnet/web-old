@@ -24,7 +24,7 @@
             flex-direction: column;
             opacity: 0;
             transform: translateX(-100%);
-            transition: all 1s ease-in-out;
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
         }
         .section.active {
             opacity: 1;
@@ -106,8 +106,14 @@
     <script>
         $(document).ready(function() {
             $(window).on('scroll', function() {
-                $('.section').each(function(i) {
-                    if ($(this).offset().top <= $(window).scrollTop() + $(window).height() * 0.75) {
+                $('.section').each(function() {
+                    var scrollTop = $(window).scrollTop();
+                    var elementOffset = $(this).offset().top;
+                    var distance = elementOffset - scrollTop;
+                    var windowHeight = $(window).height();
+
+                    // セクションの上端がウィンドウの底部から一定の距離以内に来た場合に表示
+                    if (distance < windowHeight - 100) {
                         $(this).addClass('active');
                     } else {
                         $(this).removeClass('active');
