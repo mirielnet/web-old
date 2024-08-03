@@ -95,39 +95,41 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
         $(document).ready(function() {
+            var lastScrollTop = 0;
             var currentSectionIndex = 0;
             var sections = $('.section');
         
             function showSection(index) {
                 sections.removeClass('active').hide();
-                sections.eq(index).addClass('active').show();
+                sections.eq(index).addClass('active').fadeIn();
             }
         
             // 最初のセクションを表示
             showSection(currentSectionIndex);
         
-            var lastScrollTop = 0;
             $(window).on('scroll', function() {
                 var st = $(this).scrollTop();
         
+                // 下スクロール
                 if (st > lastScrollTop) {
-                    // 下にスクロール
                     if (currentSectionIndex < sections.length - 1) {
                         currentSectionIndex++;
                         showSection(currentSectionIndex);
-                        $('html, body').stop().animate({ scrollTop: 0 }, 'fast'); // スクロールをリセット
                     }
-                } else {
-                    // 上にスクロール
+                } 
+                // 上スクロール
+                else if (st < lastScrollTop) {
                     if (currentSectionIndex > 0) {
                         currentSectionIndex--;
                         showSection(currentSectionIndex);
-                        $('html, body').stop().animate({ scrollTop: 0 }, 'fast'); // スクロールをリセット
                     }
                 }
                 lastScrollTop = st;
-            });
-        });         
+                
+                // スクロールをリセットすることで、ユーザーのスクロール操作を無効化
+                $(window).scrollTop(0);
+        });
+    });
     </script>
 </body>
 </html>
