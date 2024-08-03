@@ -13,15 +13,18 @@
             background-color: black;
             color: white;
             font-family: 'Play', sans-serif;
-            overflow-x: hidden;
+            overflow: hidden;
         }
         .section {
             display: none;
-            align-items: center;
             justify-content: center;
-            min-height: 100vh;
-            flex-direction: column;
+            align-items: center;
+            height: 100%;
             text-align: center;
+            flex-direction: column;
+        }
+        .active {
+            display: flex;
         }
         h1, h2, h3 {
             margin: 0.5em 0;
@@ -48,6 +51,9 @@
             padding: 1rem;
             background-color: #111;
             text-align: center;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
@@ -96,37 +102,35 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         $(document).ready(function() {
-            let timer;
-            let currentSectionIndex = 0;
+            let scroll = 0;
             const sections = $('.section');
             const fadeTime = 500; // フェードイン/フェードアウトの時間（ミリ秒）
+            let currentSectionIndex = 0;
 
             function showSection(index) {
-                sections.hide(); // 全てのセクションを非表示
-                sections.eq(index).fadeIn(fadeTime); // 指定されたセクションをフェードイン
+                sections.removeClass('active'); // 全てのセクションを非表示
+                sections.eq(index).fadeIn(fadeTime).addClass('active'); // 指定されたセクションをフェードイン
             }
 
-            showSection(currentSectionIndex); // 最初のセクションを表示
-
             $(window).on('scroll', function() {
-                clearTimeout(timer);
-                timer = setTimeout(function() {
-                    const windowTop = $(window).scrollTop();
-                    let nextSectionIndex = currentSectionIndex;
-
-                    sections.each(function(i) {
-                        const sectionTop = $(this).offset().top - $(window).height() / 2;
-                        if (windowTop >= sectionTop) {
-                            nextSectionIndex = i;
-                        }
-                    });
-
-                    if (nextSectionIndex !== currentSectionIndex) {
-                        currentSectionIndex = nextSectionIndex;
+                let newScroll = $(this).scrollTop();
+                if (newScroll < scroll) {
+                    // 上スクロールの時の処理
+                    if (currentSectionIndex > 0) {
+                        currentSectionIndex--;
                         showSection(currentSectionIndex);
                     }
-                }, 150); // スクロール停止後に150ms待機してからセクションを変更
+                } else {
+                    // 下スクロールの時の処理
+                    if (currentSectionIndex < sections.length - 1) {
+                        currentSectionIndex++;
+                        showSection(currentSectionIndex);
+                    }
+                }
+                scroll = newScroll;
             });
+
+            showSection(currentSectionIndex); // 最初のセクションを表示
         });
     </script>
 </body>
