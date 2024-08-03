@@ -101,36 +101,33 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        $(document).ready(function() {
-            var scroll = 0;
-            const sections = $('.section');
-            const fadeTime = 500; // フェードイン/フェードアウトの時間（ミリ秒）
-            let currentSectionIndex = 0;
+        let scroll = 0;
+        const sections = $('.section');
+        let currentSection = 0;
 
-            function showSection(index) {
-                sections.fadeOut(fadeTime); // 全てのセクションをフェードアウト
-                sections.eq(index).fadeIn(fadeTime); // 指定されたセクションをフェードイン
+        // 初期セクションを表示
+        $(sections[currentSection]).addClass('active');
+
+        $(window).on('scroll', function() {
+            let newScroll = $(this).scrollTop();
+
+            if (newScroll > scroll && currentSection < sections.length - 1) {
+                // 下スクロールの時、次のセクションに移動
+                $(sections[currentSection]).removeClass('active');
+                currentSection++;
+                $(sections[currentSection]).addClass('active');
+            } else if (newScroll < scroll && currentSection > 0) {
+                // 上スクロールの時、前のセクションに移動
+                $(sections[currentSection]).removeClass('active');
+                currentSection--;
+                $(sections[currentSection]).addClass('active');
             }
 
-            $(window).on('scroll', function() {
-                var newScroll = $(this).scrollTop();
-                if (newScroll < scroll) {
-                    // 上スクロールの時の処理
-                    if (currentSectionIndex > 0) {
-                        currentSectionIndex--;
-                        showSection(currentSectionIndex);
-                    }
-                } else {
-                    // 下スクロールの時の処理
-                    if (currentSectionIndex < sections.length - 1) {
-                        currentSectionIndex++;
-                        showSection(currentSectionIndex);
-                    }
-                }
-                scroll = newScroll;
-            });
+            // 現在のスクロール位置を更新
+            scroll = newScroll;
 
-            showSection(currentSectionIndex); // 最初のセクションを表示
+            // スクロールを停止させる
+            $(window).scrollTop(scroll);
         });
     </script>
 </body>
