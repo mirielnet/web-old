@@ -1,6 +1,6 @@
 const fastify = require('fastify')({ logger: true });
 const path = require('path');
-const fastifyStatic = require('fastify-static');
+const fastifyStatic = require('@fastify/static');
 
 // 静的ファイルを提供するための設定
 fastify.register(fastifyStatic, {
@@ -16,7 +16,7 @@ fastify.get('/', async (request, reply) => {
 // サーバーの起動
 const start = async () => {
   try {
-    await fastify.listen(5001, '0.0.0.0');
+    await fastify.listen({ port: 5001, host: '0.0.0.0' });
     fastify.log.info(`Server is running at http://localhost:5001`);
   } catch (err) {
     fastify.log.error(err);
