@@ -16,8 +16,8 @@ fastify.get('/', async (request, reply) => {
 // サーバーの起動
 const start = async () => {
   try {
-    await fastify.listen(3000, '0.0.0.0');
-    fastify.log.info(`Server is running at http://localhost:3000`);
+    await fastify.listen(5001, '0.0.0.0');
+    fastify.log.info(`Server is running at http://localhost:5001`);
   } catch (err) {
     fastify.log.error(err);
     process.exit(1);
