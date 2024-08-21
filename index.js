@@ -8,6 +8,12 @@ fastify.register(fastifyStatic, {
   prefix: '/',
 });
 
+// images フォルダを提供するための設定
+fastify.register(fastifyStatic, {
+  root: path.join(__dirname, 'public/images'),
+  prefix: '/images/',
+});
+
 // ルートエンドポイントの設定
 fastify.get('/', async (request, reply) => {
   return reply.sendFile('index.html');
