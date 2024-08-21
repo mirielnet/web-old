@@ -5,13 +5,7 @@ const fastifyStatic = require('@fastify/static');
 // 静的ファイルを提供するための設定
 fastify.register(fastifyStatic, {
   root: path.join(__dirname, 'public'),
-  prefix: '/',
-});
-
-// images フォルダを提供するための設定
-fastify.register(fastifyStatic, {
-  root: path.join(__dirname, 'public/images'),
-  prefix: '/images/',
+  prefix: '/', // これで public フォルダ全体を提供します
 });
 
 // ルートエンドポイントの設定
